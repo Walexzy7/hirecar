@@ -9,7 +9,13 @@ package com.walezy.hirecar.views;
  *
  * @author hp
  */
+
+import javax.swing.JProgressBar;
+
 public class SplashScreen extends javax.swing.JFrame {
+    
+    JProgressBar progress;
+    private final long SLEEP_LENGTH = 2000;
 
     /**
      * Creates new form SplashScreen
@@ -19,6 +25,28 @@ public class SplashScreen extends javax.swing.JFrame {
         setVisible(true);
         setLocationRelativeTo(null);
         
+        progress = splashProgressBar;
+        
+    }
+    
+    
+    private void loadApp(){
+        
+        progress.setValue(0);
+        
+        while(progress.getValue() < 100){
+            progress.setValue(progress.getValue() + 5);
+            
+            try {
+            Thread.sleep(SLEEP_LENGTH);
+            
+            } catch (Exception e){
+                
+            }
+        }
+        
+        new LoginView();
+        dispose();
     }
 
     /**
@@ -33,7 +61,7 @@ public class SplashScreen extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jProgressBar1 = new javax.swing.JProgressBar();
+        splashProgressBar = new javax.swing.JProgressBar();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -50,14 +78,11 @@ public class SplashScreen extends javax.swing.JFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(170, 170, 170)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(170, 170, 170)
-                        .addComponent(jLabel1))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(208, 208, 208)
-                        .addComponent(jProgressBar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(200, Short.MAX_VALUE))
+                    .addComponent(splashProgressBar, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1))
+                .addContainerGap(186, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -65,7 +90,7 @@ public class SplashScreen extends javax.swing.JFrame {
                 .addGap(72, 72, 72)
                 .addComponent(jLabel1)
                 .addGap(63, 63, 63)
-                .addComponent(jProgressBar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(splashProgressBar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(82, Short.MAX_VALUE))
         );
 
@@ -107,6 +132,6 @@ public class SplashScreen extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JProgressBar jProgressBar1;
+    private javax.swing.JProgressBar splashProgressBar;
     // End of variables declaration//GEN-END:variables
 }
