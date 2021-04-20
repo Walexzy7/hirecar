@@ -9,13 +9,16 @@ package com.walezy.hirecar.views;
  *
  * @author hp
  */
-public class AddCarView extends javax.swing.JPanel {
+public class AddCarView extends javax.swing.JFrame {
 
     /**
      * Creates new form AddCarView
      */
     public AddCarView() {
         initComponents();
+        setVisible(true);
+        setLocationRelativeTo(null);
+        setResizable(false);
     }
 
     /**

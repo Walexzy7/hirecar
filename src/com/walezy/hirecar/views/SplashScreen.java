@@ -27,6 +27,8 @@ public class SplashScreen extends javax.swing.JFrame {
         
         progress = splashProgressBar;
         
+        loadApp();
+        
     }
     
     
@@ -35,7 +37,7 @@ public class SplashScreen extends javax.swing.JFrame {
         progress.setValue(0);
         
         while(progress.getValue() < 100){
-            progress.setValue(progress.getValue() + 5);
+            progress.setValue(progress.getValue() + 20);
             
             try {
             Thread.sleep(SLEEP_LENGTH);
