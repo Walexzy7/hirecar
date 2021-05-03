@@ -112,6 +112,11 @@ public class MenuView extends javax.swing.JFrame {
 
         manage_customers_button.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         manage_customers_button.setText("Manage Customers");
+        manage_customers_button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                manage_customers_buttonActionPerformed(evt);
+            }
+        });
 
         log_out_link.setText("Log Out");
         log_out_link.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -215,6 +220,11 @@ public class MenuView extends javax.swing.JFrame {
         new LoginView();
         dispose();
     }//GEN-LAST:event_log_out_linkMouseClicked
+
+    private void manage_customers_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manage_customers_buttonActionPerformed
+        // TODO add your handling code here:
+        new ManageCustomerView();
+    }//GEN-LAST:event_manage_customers_buttonActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
